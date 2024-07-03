@@ -1,3 +1,5 @@
+import { Avatar } from "./Avatar";
+import { Comment } from "./Comment";
 import { Link } from "./Link";
 
 export function Post() {
@@ -5,16 +7,12 @@ export function Post() {
 		<article className="bg-gray-800 rounded-lg p-10">
 			<header className="flex items-center justify-between">
 				<div className="flex items-center gap-4">
-					<img
-						src="https://github.com/gurgelio.png"
-						alt="Avatar"
-						className="box-content w-14 aspect-square rounded-lg border-gray-800 border-4 outline outline-2 outline-emerald-500"
-					/>
+					<Avatar outline={true} src="https://github.com/gurgelio.png" />
 					<div className="flex flex-col">
-						<strong className="font-bold text-gray-100 leading-6">
+						<strong className="font-bold text-gray-100 leading-relaxed">
 							Leonardo Gurgel
 						</strong>
-						<span className="text-sm text-gray-400 leading-6">
+						<span className="text-sm text-gray-400 leading-relaxed">
 							Full-Stack Developer
 						</span>
 					</div>
@@ -29,7 +27,7 @@ export function Post() {
 				</time>
 			</header>
 
-			<p className="leading-6 text-gray-300 mt-6">
+			<p className="leading-relaxed text-gray-300 mt-6">
 				Fala galeraa 👋<br />
 				<br /> Acabei de subir mais um projeto no meu portifa. É um projeto que
 				fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare
@@ -52,11 +50,11 @@ export function Post() {
 			</p>
 
 			<form className="w-full mt-6 pt-6 border-t border-gray-600 dynamic-submit-button">
-				<strong className="leading-6 text-gray-100 font-bold">
+				<strong className="leading-relaxed text-gray-100 font-bold">
 					Deixe seu feedback
 				</strong>
 				<textarea
-					className="relative w-full bg-gray-900 resize-none h-24 p-4 rounded-lg text-gray-100 leading-5 mt-4 focus:outline-emerald-500 z-50"
+					className="relative w-full bg-gray-900 resize-none h-24 p-4 rounded-lg text-gray-100 leading-normal mt-4 focus:outline-emerald-500 z-50"
 					placeholder="Deixe um comentário"
 				/>
 				<button
@@ -66,6 +64,12 @@ export function Post() {
 					Publicar
 				</button>
 			</form>
+
+			<div className="">
+				<Comment />
+				<Comment />
+				<Comment />
+			</div>
 		</article>
 	);
 }

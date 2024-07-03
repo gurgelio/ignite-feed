@@ -1,4 +1,5 @@
 import { PencilSimple } from "phosphor-react";
+import { Avatar } from "./Avatar";
 
 export function Sidebar() {
 	return (
@@ -10,15 +11,15 @@ export function Sidebar() {
 			/>
 
 			<div className="flex flex-col items-center">
-				<img
-					className="box-content w-14 aspect-square rounded-lg border-gray-800 border-4 -mt-8 outline outline-2 outline-emerald-500"
+				<Avatar
+					className="-mt-8 border-gray-800"
 					src="https://github.com/gurgelio.png"
-					alt=""
+					outline={true}
 				/>
-				<strong className="mt-4 text-gray-100 leading-6">
+				<strong className="mt-4 text-gray-100 leading-relaxed">
 					Leonardo Gurgel
 				</strong>
-				<span className="text-sm text-gray-400 leading-6">
+				<span className="text-sm text-gray-400 leading-relaxed">
 					Full-Stack Developer
 				</span>
 			</div>

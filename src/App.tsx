@@ -1,5 +1,6 @@
 import { Header } from "./components/Header";
 import { Sidebar } from "./components/Sidebar";
+import { Post } from "./components/Post";
 
 export function App() {
 	return (
@@ -8,7 +9,10 @@ export function App() {
 
 			<div className="max-w-6xl mx-auto my-8 px-4 grid grid-cols-[256px_1fr] gap-8 items-start">
 				<Sidebar />
-				<main>main</main>
+				<main className="flex flex-col gap-8">
+					<Post />
+					<Post />
+				</main>
 			</div>
 		</>
 	);

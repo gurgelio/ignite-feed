@@ -12,7 +12,7 @@ export function Post() {
 						<strong className="font-bold text-gray-100 leading-relaxed">
 							Leonardo Gurgel
 						</strong>
-						<span className="text-sm text-gray-400 leading-relaxed">
+						<span className="text-sm/relaxed text-gray-400">
 							Full-Stack Developer
 						</span>
 					</div>

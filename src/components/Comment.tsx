@@ -10,11 +10,9 @@ export function Comment() {
 				<div className="bg-gray-700 p-4 rounded-lg">
 					<header className="flex items-start justify-between">
 						<div className="flex flex-col">
-							<strong className="font-bold text-sm leading-relaxed">
-								Devon Lane
-							</strong>
+							<strong className="font-bold text-sm/relaxed">Devon Lane</strong>
 							<time
-								className="text-xs text-gray-400 leading-relaxed"
+								className="text-xs/relaxed text-gray-400"
 								title="3 de julho às 14:16"
 								dateTime="2024-07-03 14:06:00"
 							>

@@ -6,7 +6,7 @@ interface AvatarProps {
 	outline?: boolean;
 }
 
-export function Avatar({ src, outline = false, className = "" }: AvatarProps) {
+export function Avatar({ src, outline = false, className }: AvatarProps) {
 	return (
 		<img
 			className={cn(

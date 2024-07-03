@@ -19,4 +19,12 @@
     font-display: swap;
     src: url(/fonts/Roboto-Bold.ttf) format("ttf");
   }
+
+  :focus {
+    @apply outline-none;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-emerald-500;
+  }
 }

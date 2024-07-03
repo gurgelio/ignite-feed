@@ -49,6 +49,22 @@ export function Post() {
 					#tetris
 				</Link>
 			</p>
+
+			<form className="w-full mt-6 pt-6 border-t border-gray-600">
+				<strong className="leading-6 text-gray-100 font-bold">
+					Deixe seu feedback
+				</strong>
+				<textarea
+					className="w-full bg-gray-900 resize-none h-24 p-4 rounded-lg text-gray-100 leading-5 mt-4 focus:outline-emerald-500"
+					placeholder="Deixe um comentário"
+				/>
+				<button
+					className="py-4 px-6 mt-4 rounded-lg bg-emerald-500 text-white font-bold cursor-pointer hover:bg-emerald-400 transition-colors"
+					type="submit"
+				>
+					Publicar
+				</button>
+			</form>
 		</article>
 	);
 }

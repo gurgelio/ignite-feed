@@ -28,3 +28,13 @@
     @apply outline-2 outline-emerald-500;
   }
 }
+
+@layer components {
+  .dynamic-submit-button button[type="submit"] {
+    @apply max-h-0 opacity-0 relative -top-24 transition-all;
+  }
+
+  .dynamic-submit-button:focus-within button[type="submit"] {
+    @apply max-h-none opacity-100 translate-y-24;
+  }
+}

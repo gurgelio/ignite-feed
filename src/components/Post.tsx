@@ -7,6 +7,7 @@ export function Post() {
 				<div className="flex items-center gap-4">
 					<img
 						src="https://github.com/gurgelio.png"
+						alt="Avatar"
 						className="box-content w-14 aspect-square rounded-lg border-gray-800 border-4 outline outline-2 outline-emerald-500"
 					/>
 					<div className="flex flex-col">
@@ -50,12 +51,12 @@ export function Post() {
 				</Link>
 			</p>
 
-			<form className="w-full mt-6 pt-6 border-t border-gray-600">
+			<form className="w-full mt-6 pt-6 border-t border-gray-600 dynamic-submit-button">
 				<strong className="leading-6 text-gray-100 font-bold">
 					Deixe seu feedback
 				</strong>
 				<textarea
-					className="w-full bg-gray-900 resize-none h-24 p-4 rounded-lg text-gray-100 leading-5 mt-4 focus:outline-emerald-500"
+					className="relative w-full bg-gray-900 resize-none h-24 p-4 rounded-lg text-gray-100 leading-5 mt-4 focus:outline-emerald-500 z-50"
 					placeholder="Deixe um comentário"
 				/>
 				<button

@@ -1,0 +1,36 @@
+[
+	{
+		"id": 1,
+		"author": {
+			"avatarUrl": "https://github.com/gurgelio.png",
+			"name": "Leonardo Gurgel",
+			"role": "Full-Stack Developer"
+		},
+		"publishedAt": "2024-07-04 16:13:00",
+		"content": [
+			{ "type": "text", "content": "Fala galeraa 👋\n" },
+			{ "type": "text", "content": "\n" },
+			{
+				"type": "text",
+				"content": "Acabei de subir mais um projeto no meu portifa. É um tetris feito inteiramente com React 🚀\n"
+			},
+			{ "type": "text", "content": "\n" },
+			{ "type": "text", "content": "👉 " },
+			{
+				"type": "link",
+				"content": "tetris.gurgel.io",
+				"href": "https://tetris.gurgel.io"
+			},
+			{ "type": "text", "content": "\n" },
+			{ "type": "text", "content": "\n" },
+			{
+				"type": "tag",
+				"content": "#novoprojeto"
+			},
+			{ "type": "text", "content": " " },
+			{ "type": "tag", "content": "#react" },
+			{ "type": "text", "content": " " },
+			{ "type": "tag", "content": "#tetris" }
+		]
+	}
+]

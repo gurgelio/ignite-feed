@@ -1,20 +1,19 @@
+import type { Post as PostType } from "../model/post";
 import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
-import { Link } from "./Link";
+import { Token } from "./Token";
 
-export function Post() {
+export function Post({ author, publishedAt, content }: PostType) {
 	return (
 		<article className="bg-gray-800 rounded-lg p-10">
 			<header className="flex items-center justify-between">
 				<div className="flex items-center gap-4">
-					<Avatar outline={true} src="https://github.com/gurgelio.png" />
+					<Avatar outline={true} src={author.avatarUrl} />
 					<div className="flex flex-col">
 						<strong className="font-bold text-gray-100 leading-relaxed">
-							Leonardo Gurgel
+							{author.name}
 						</strong>
-						<span className="text-sm/relaxed text-gray-400">
-							Full-Stack Developer
-						</span>
+						<span className="text-sm/relaxed text-gray-400">{author.role}</span>
 					</div>
 				</div>
 
@@ -27,27 +26,12 @@ export function Post() {
 				</time>
 			</header>
 
-			<p className="leading-relaxed text-gray-300 mt-6">
-				Fala galeraa 👋<br />
-				<br /> Acabei de subir mais um projeto no meu portifa. É um projeto que
-				fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare
-				🚀<br />
-				<br /> 👉{" "}
-				<Link href="https://tetris.gurgel.io/" rel="external">
-					tetris.gurgel.io
-				</Link>
-				<br />
-				<br />
-				<Link rel="tag" href="#novoprojeto">
-					#novoprojeto
-				</Link>{" "}
-				<Link rel="tag" href="#nlw">
-					#react
-				</Link>{" "}
-				<Link rel="tag" href="#rocketseat">
-					#tetris
-				</Link>
-			</p>
+			<section className="leading-relaxed text-gray-300 mt-6">
+				{content.map((token, index) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: the order of the array never changes
+					<Token key={index} token={token} />
+				))}
+			</section>
 
 			<form className="w-full mt-6 pt-6 border-t border-gray-600 dynamic-submit-button">
 				<strong className="leading-relaxed text-gray-100 font-bold">
@@ -65,11 +49,11 @@ export function Post() {
 				</button>
 			</form>
 
-			<div className="">
+			<section>
 				<Comment />
 				<Comment />
 				<Comment />
-			</div>
+			</section>
 		</article>
 	);
 }

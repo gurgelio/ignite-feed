@@ -1,6 +1,5 @@
 import { format, formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import { useMemo } from "react";
 import { cn } from "../utils/cn";
 
 interface TimeProps {
@@ -9,17 +8,13 @@ interface TimeProps {
 }
 
 export function Time({ date, className }: TimeProps) {
-	const [formattedDate, relativeFormattedDate] = useMemo(() => {
-		return [
-			format(date, "d 'de' LLLL 'às' HH:mm'h'", {
-				locale: ptBR,
-			}),
-			formatDistanceToNow(date, {
-				locale: ptBR,
-				addSuffix: true,
-			}),
-		];
-	}, [date]);
+	const formattedDate = format(date, "d 'de' LLLL 'às' HH:mm'h'", {
+		locale: ptBR,
+	});
+	const relativeFormattedDate = formatDistanceToNow(date, {
+		locale: ptBR,
+		addSuffix: true,
+	});
 
 	return (
 		<time

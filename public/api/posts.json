@@ -7,30 +7,67 @@
 			"role": "Full-Stack Developer"
 		},
 		"publishedAt": "2024-07-04 16:13:00",
+		"comments": [],
 		"content": [
-			{ "type": "text", "content": "Fala galeraa 👋\n" },
-			{ "type": "text", "content": "\n" },
 			{
-				"type": "text",
-				"content": "Acabei de subir mais um projeto no meu portifa. É um tetris feito inteiramente com React 🚀\n"
+				"insert": "Fala galeraa 👋",
+				"attributes": { "bold": true }
 			},
-			{ "type": "text", "content": "\n" },
-			{ "type": "text", "content": "👉 " },
+			{ "insert": "\n" },
 			{
-				"type": "link",
-				"content": "tetris.gurgel.io",
-				"href": "https://tetris.gurgel.io"
+				"insert": "Acabei de subir mais um projeto no meu portifa. É um tetris feito inteiramente com React 🚀"
 			},
-			{ "type": "text", "content": "\n" },
-			{ "type": "text", "content": "\n" },
+			{ "insert": "\n" },
+			{ "insert": "👉 " },
 			{
-				"type": "tag",
-				"content": "#novoprojeto"
+				"insert": "tetris.gurgel.io",
+				"attributes": {
+					"link": "https://tetris.gurgel.io"
+				}
 			},
-			{ "type": "text", "content": " " },
-			{ "type": "tag", "content": "#react" },
-			{ "type": "text", "content": " " },
-			{ "type": "tag", "content": "#tetris" }
+			{ "insert": "\n" },
+			{ "insert": "\n" },
+			{
+				"insert": "#novoprojeto",
+				"attributes": {
+					"link": "#"
+				}
+			},
+			{ "insert": " " },
+			{
+				"insert": "#react",
+				"attributes": {
+					"link": "#"
+				}
+			},
+			{ "insert": " " },
+			{
+				"insert": "#tetris",
+				"attributes": {
+					"link": "#"
+				}
+			}
 		]
+	},
+	{
+		"id": 2,
+		"author": {
+			"avatarUrl": "https://github.com/markgabe.png",
+			"name": "Marcos Gabriel",
+			"role": "Tech Lead @ Visagio"
+		},
+		"publishedAt": "2024-07-24 15:53:00",
+		"content": [
+			{
+				"insert": "Mano, esse tal de Crowdstrike ai deu confusão hein"
+			},
+			{
+				"insert": "\n"
+			},
+			{
+				"insert": "🥶🥶🥶"
+			}
+		],
+		"comments": []
 	}
 ]

@@ -9,6 +9,7 @@ export function App() {
 	const { isPending, error, data } = useQuery({
 		queryKey: ["posts"],
 		queryFn: getPosts,
+		staleTime: Number.POSITIVE_INFINITY,
 	});
 
 	if (error != null) {

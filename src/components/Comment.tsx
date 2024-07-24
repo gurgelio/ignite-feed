@@ -1,23 +1,26 @@
 import { ThumbsUp, Trash } from "phosphor-react";
 import { Avatar } from "./Avatar";
+import type { Comment as CommentType } from "../types/post";
+import { Time } from "./Time";
+import { Op } from "./Op";
 
-export function Comment() {
+interface CommentProps {
+	comment: CommentType;
+}
+
+export function Comment({ comment }: CommentProps) {
 	return (
 		<div className="mt-6 flex gap-4 items-start">
-			<Avatar className="w-12" src="https://github.com/gurgelio.png" />
+			<Avatar className="w-12" src={comment.author.avatarUrl} />
 
 			<div className="flex-1">
 				<div className="bg-gray-700 p-4 rounded-lg">
 					<header className="flex items-start justify-between">
 						<div className="flex flex-col">
-							<strong className="font-bold text-sm/relaxed">Devon Lane</strong>
-							<time
-								className="text-xs/relaxed text-gray-400"
-								title="3 de julho às 14:16"
-								dateTime="2024-07-03 14:06:00"
-							>
-								Cerca de 1h atrás
-							</time>
+							<strong className="font-bold text-sm/relaxed">
+								{comment.author.name}
+							</strong>
+							<Time date={comment.publishedAt} className="text-xs/relaxed" />
 						</div>
 						<button
 							type="button"
@@ -27,7 +30,12 @@ export function Comment() {
 							<Trash size={20} />
 						</button>
 					</header>
-					<p className="text-gray-300 mt-4">Muito bom Devon, parabéns!! 👏👏</p>
+					<p className="text-gray-300 mt-4">
+						{comment.content.map((op, index) => (
+							// biome-ignore lint/suspicious/noArrayIndexKey: array is never reordered
+							<Op op={op} key={index} />
+						))}
+					</p>
 				</div>
 				<footer className="mt-4">
 					<button

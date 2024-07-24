@@ -1,9 +1,10 @@
-import type { Post as PostType } from "../model/post";
+import type { Post as PostType } from "../types/post";
 import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
-import { Token } from "./Token";
+import { Op } from "./Op";
+import { Time } from "./Time";
 
-export function Post({ author, publishedAt, content }: PostType) {
+export function Post({ author, publishedAt, content, comments }: PostType) {
 	return (
 		<article className="bg-gray-800 rounded-lg p-10">
 			<header className="flex items-center justify-between">
@@ -17,19 +18,13 @@ export function Post({ author, publishedAt, content }: PostType) {
 					</div>
 				</div>
 
-				<time
-					className="text-sm text-gray-400"
-					title="3 de julho às 14:16"
-					dateTime="2024-07-03 14:06:00"
-				>
-					Publicado há 1h
-				</time>
+				<Time date={publishedAt} />
 			</header>
 
 			<section className="leading-relaxed text-gray-300 mt-6">
-				{content.map((token, index) => (
-					// biome-ignore lint/suspicious/noArrayIndexKey: the order of the array never changes
-					<Token key={index} token={token} />
+				{content.map((op, index) => (
+					/* biome-ignore lint/suspicious/noArrayIndexKey: Array nunca é reordenado */
+					<Op op={op} key={index} />
 				))}
 			</section>
 
@@ -50,9 +45,9 @@ export function Post({ author, publishedAt, content }: PostType) {
 			</form>
 
 			<section>
-				<Comment />
-				<Comment />
-				<Comment />
+				{comments.map((comment) => (
+					<Comment comment={comment} key={comment.id} />
+				))}
 			</section>
 		</article>
 	);

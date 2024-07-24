@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { postSchema } from "../model/post";
+import { postSchema } from "../types/post";
 
 const postsResponseSchema = z.array(postSchema);
 

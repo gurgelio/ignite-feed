@@ -23,4 +23,4 @@ export const opSchema = z.union([
 	}),
 ]);
 
-export type Op = z.infer<typeof opSchema>;
+export type OpSchema = z.infer<typeof opSchema>;

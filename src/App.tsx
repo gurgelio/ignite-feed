@@ -26,7 +26,7 @@ export function App() {
 					{isPending ? (
 						<p>Loading...</p>
 					) : (
-						data.map((post) => <Post key={post.id} {...post} />)
+						data.map((post) => <Post key={post.id} post={post} />)
 					)}
 				</main>
 			</div>

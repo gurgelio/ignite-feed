@@ -11,7 +11,7 @@ interface PostProps {
 }
 
 export function Post({ post }: PostProps) {
-	const [comments, addComment, deleteComment] = useComments(
+	const [comments, addComment, deleteComment, likeComment] = useComments(
 		post.id,
 		post.comments,
 	);
@@ -49,6 +49,7 @@ export function Post({ post }: PostProps) {
 						comment={comment}
 						key={comment.id}
 						deleteComment={deleteComment}
+						likeComment={likeComment}
 					/>
 				))}
 			</section>

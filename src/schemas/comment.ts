@@ -7,6 +7,7 @@ export const commentSchema = z.object({
 	author: authorSchema,
 	publishedAt: z.coerce.date().max(new Date()),
 	content: z.array(opSchema),
+	likeCount: z.number().positive().int(),
 });
 
 export type CommentSchema = z.infer<typeof commentSchema>;

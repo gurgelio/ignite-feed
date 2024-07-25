@@ -15,7 +15,7 @@ export function useComments(postId: number, initialData: CommentSchema[]) {
 		queryClient.setQueryData<CommentSchema[]>([postId, "comments"], (old) => [
 			...(old ?? []),
 			{
-				id: old?.length ?? 1,
+				id: (old?.[old.length - 1]?.id ?? 0) + 1,
 				author: {
 					avatarUrl: "https://github.com/gurgelio.png",
 					role: "Full Stack Developer",
@@ -23,6 +23,7 @@ export function useComments(postId: number, initialData: CommentSchema[]) {
 				},
 				publishedAt: new Date(),
 				content: [{ insert: newComment }],
+				likeCount: 0,
 			},
 		]);
 	};
@@ -33,5 +34,16 @@ export function useComments(postId: number, initialData: CommentSchema[]) {
 		);
 	};
 
-	return [comments, addComment, deleteComment] as const;
+	const likeComment = (id: number) => {
+		queryClient.setQueryData<CommentSchema[]>([postId, "comments"], (old) =>
+			old?.map((comment) => {
+				if (comment.id === id) {
+					return { ...comment, likeCount: comment.likeCount + 1 };
+				}
+				return comment;
+			}),
+		);
+	};
+
+	return [comments, addComment, deleteComment, likeComment] as const;
 }

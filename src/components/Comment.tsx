@@ -7,9 +7,10 @@ import { Op } from "./Op";
 interface CommentProps {
 	comment: CommentSchema;
 	deleteComment: (index: number) => void;
+	likeComment: (index: number) => void;
 }
 
-export function Comment({ comment, deleteComment }: CommentProps) {
+export function Comment({ comment, deleteComment, likeComment }: CommentProps) {
 	return (
 		<div className="mt-6 flex gap-4 items-start">
 			<Avatar className="w-12" src={comment.author.avatarUrl} />
@@ -43,10 +44,13 @@ export function Comment({ comment, deleteComment }: CommentProps) {
 					<button
 						type="button"
 						className="text-gray-400 cursor-pointer flex items-center transition-colors rounded-sm hover:text-emerald-300"
+						onClick={() => likeComment(comment.id)}
 					>
 						<ThumbsUp className="mr-2" />
 						Aplaudir{" "}
-						<span className="before:px-2 before:content-['•']">20</span>
+						<span className="before:px-2 before:content-['•']">
+							{comment.likeCount}
+						</span>
 					</button>
 				</footer>
 			</div>

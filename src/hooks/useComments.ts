@@ -17,9 +17,9 @@ export function useComments(postId: number, initialData: CommentSchema[]) {
 			{
 				id: (old?.[old.length - 1]?.id ?? 0) + 1,
 				author: {
-					avatarUrl: "https://github.com/gurgelio.png",
-					role: "Full Stack Developer",
-					name: "Leonardo Gurgel",
+					avatarUrl: "https://github.com/torvalds.png",
+					role: "Creator of Linux",
+					name: "Linus Torvalds",
 				},
 				publishedAt: new Date(),
 				content: [{ insert: newComment }],

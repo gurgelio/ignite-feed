@@ -13,15 +13,13 @@ export function Sidebar() {
 			<div className="flex flex-col items-center">
 				<Avatar
 					className="-mt-8 border-gray-800"
-					src="https://github.com/gurgelio.png"
+					src="https://github.com/torvalds.png"
 					outline={true}
 				/>
 				<strong className="mt-4 text-gray-100 leading-relaxed">
-					Leonardo Gurgel
+					Linus Torvalds
 				</strong>
-				<span className="text-sm/relaxed text-gray-400">
-					Full-Stack Developer
-				</span>
+				<span className="text-sm/relaxed text-gray-400">Creator of Linux</span>
 			</div>
 
 			<footer className="border-t-gray-600 border-t mt-6 pt-6 p-8">

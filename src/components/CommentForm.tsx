@@ -50,7 +50,7 @@ export function CommentForm({ addComment }: CommentFormProps) {
 			/>
 			<button
 				disabled={newCommentText.length === 0}
-				className="py-4 px-6 mt-4 rounded-lg text-white font-bold cursor-pointer transition-colors bg-emerald-500 hover:bg-emerald-400 disabled:text-gray-300 disabled:bg-neutral-500 disabled:hover:bg-neutral-400 disabled:cursor-not-allowed"
+				className="py-2.5 px-6 mt-4 rounded-lg text-white font-bold cursor-pointer transition-colors bg-emerald-500 hover:bg-emerald-400 disabled:text-gray-300 disabled:bg-neutral-500 disabled:hover:bg-neutral-600 disabled:cursor-not-allowed"
 				type="submit"
 			>
 				Comentar

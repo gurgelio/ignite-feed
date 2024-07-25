@@ -1,6 +1,7 @@
 import {
-	type ChangeEventHandler,
-	type FormEventHandler,
+	type ChangeEvent,
+	type FormEvent,
+	type InvalidEvent,
 	useState,
 } from "react";
 
@@ -12,18 +13,16 @@ export function CommentForm({ addComment }: CommentFormProps) {
 	const [newCommentText, setNewCommentText] = useState("");
 	const isNewCommentEmpty = newCommentText.length === 0;
 
-	const onChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+	const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
 		event.target.setCustomValidity("");
 		setNewCommentText(event.target.value);
 	};
 
-	const onInvalid: FormEventHandler<HTMLTextAreaElement> = (event) => {
-		(event.target as HTMLTextAreaElement).setCustomValidity(
-			"Este campo é obrigatório!",
-		);
+	const onInvalid = (event: InvalidEvent<HTMLTextAreaElement>) => {
+		event.target.setCustomValidity("Este campo é obrigatório!");
 	};
 
-	const createComment: FormEventHandler<HTMLFormElement> = (event) => {
+	const createComment = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		if (newCommentText.length === 0) {
 			return;

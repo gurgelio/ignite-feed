@@ -27,5 +27,11 @@ export function useComments(postId: number, initialData: CommentSchema[]) {
 		]);
 	};
 
-	return [comments, addComment] as const;
+	const deleteComment = (id: number) => {
+		queryClient.setQueryData<CommentSchema[]>([postId, "comments"], (old) =>
+			old?.filter((comment) => comment.id !== id),
+		);
+	};
+
+	return [comments, addComment, deleteComment] as const;
 }

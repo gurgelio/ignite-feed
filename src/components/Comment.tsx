@@ -1,14 +1,15 @@
 import { ThumbsUp, Trash } from "phosphor-react";
 import { Avatar } from "./Avatar";
-import type { Comment as CommentType } from "../types/post";
+import type { CommentSchema } from "../schemas/comment";
 import { Time } from "./Time";
 import { Op } from "./Op";
 
 interface CommentProps {
-	comment: CommentType;
+	comment: CommentSchema;
+	deleteComment: (index: number) => void;
 }
 
-export function Comment({ comment }: CommentProps) {
+export function Comment({ comment, deleteComment }: CommentProps) {
 	return (
 		<div className="mt-6 flex gap-4 items-start">
 			<Avatar className="w-12" src={comment.author.avatarUrl} />
@@ -26,6 +27,7 @@ export function Comment({ comment }: CommentProps) {
 							type="button"
 							className="text-gray-400 cursor-pointer leading-[0] rounded-sm hover:text-rose-500 text-"
 							title="Excluir comentário"
+							onClick={() => deleteComment(comment.id)}
 						>
 							<Trash size={20} />
 						</button>

@@ -8,7 +8,7 @@
     "dev": "vite --port=3000",
     "format": "prettier .",
     "format:fix": "prettier --write .",
-    "lint": "eslint check .",
+    "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "preview": "vite preview"
   },

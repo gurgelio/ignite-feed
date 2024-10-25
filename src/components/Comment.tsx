@@ -28,14 +28,15 @@ export function Comment({ comment, deleteComment, likeComment }: CommentProps) {
               type="button"
               className="text-gray-400 cursor-pointer leading-[0] rounded-sm hover:text-rose-500 text-"
               title="Excluir comentário"
-              onClick={() => deleteComment(comment.id)}
+              onClick={() => {
+                deleteComment(comment.id);
+              }}
             >
               <Trash size={20} />
             </button>
           </header>
           <p className="text-gray-300 mt-4">
             {comment.content.map((op, index) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: array is never reordered
               <Op op={op} key={index} />
             ))}
           </p>
@@ -44,7 +45,9 @@ export function Comment({ comment, deleteComment, likeComment }: CommentProps) {
           <button
             type="button"
             className="text-gray-400 cursor-pointer flex items-center transition-colors rounded-sm hover:text-emerald-300"
-            onClick={() => likeComment(comment.id)}
+            onClick={() => {
+              likeComment(comment.id);
+            }}
           >
             <ThumbsUp className="mr-2" />
             Aplaudir{" "}

@@ -41,7 +41,7 @@ export class Option<T extends object> {
     return this.value;
   }
 
-  orElseThrow<X extends Error>(err: X) {
+  orElseThrow(err: Error) {
     if (this.value == null) {
       throw err;
     }

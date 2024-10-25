@@ -20,7 +20,7 @@ export function Link({
         "font-bold text-emerald-500 hover:text-emerald-300 transition-colors",
         className,
       )}
-      rel={rel}
+      rel={rel === "external" ? "external noreferrer" : rel}
       target={rel === "external" ? "_blank" : undefined}
     >
       {children}

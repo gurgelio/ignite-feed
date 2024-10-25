@@ -29,7 +29,7 @@ export function Op({ op }: OpProps) {
     return (
       <a
         href={op.attributes.link as string}
-        rel={op.insert?.startsWith("#") ? "tag" : "external"}
+        rel={op.insert?.startsWith("#") ? "tag" : "external noreferrer"}
         target={op.insert?.startsWith("#") ? "_self" : "_blank"}
         className={className}
       >

@@ -1,4 +1,4 @@
-export class Option<T extends {}> {
+export class Option<T extends object> {
   private value?: T;
 
   constructor(value: T | undefined = undefined) {
@@ -13,7 +13,7 @@ export class Option<T extends {}> {
     return !this.isPresent();
   }
 
-  map<U extends {}>(fn: (value: T) => U) {
+  map<U extends object>(fn: (value: T) => U) {
     if (this.value == null) {
       return new Option<U>();
     }
